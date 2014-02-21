@@ -39,7 +39,6 @@ void CCUIKit::setCCUIKit(CCUIKit * aCCUIKit)
 
 bool CCUIKit::initFacebook()
 {
-    NSLog(@"ajhgsdjahsjkdhajskda");
     return true;//[[AlbumTabViewController shareAlbumTabViewController] initFacebook];
 }
 

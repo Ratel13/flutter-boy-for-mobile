@@ -18,6 +18,13 @@ var s_ranking = "res/ranking.png";
 var s_flash = "res/flashBg.png";
 //var s_ = "res/.png";
 
+
+var s_sfx_die = "res/sfx_die.mp3";
+var s_sfx_hit = "res/sfx_hit.mp3";
+var s_sfx_point = "res/sfx_point.mp3";
+var s_sfx_wing = "res/sfx_wing.mp3";
+//var s_ = "res/.mp3";
+
 var g_resources = [
     //image
     {src:s_startBg},
@@ -37,7 +44,7 @@ var g_resources = [
     {src:s_replayBtn1},
     {src:s_replayBtn2},
     {src:s_ranking},
-    {src:s_flash}
+    {src:s_flash},
                    
     //{src:},
 
@@ -50,6 +57,10 @@ var g_resources = [
     //bgm
 
     //effect
+    {src:s_sfx_die},
+    {src:s_sfx_hit},
+    {src:s_sfx_point},
+    {src:s_sfx_wing}
 ];
 
 var g_GameRes = [

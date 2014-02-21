@@ -286,12 +286,11 @@ var Game = cc.Layer.extend({
                 );
                 element.runAction(Action);
                   */
-                cc.AudioEngine.getInstance().playEffect("res/sfx_point.mp3");
+                cc.AudioEngine.getInstance().playEffect(s_sfx_point);
                 soapArray.shift();
                 this.getSoapCallback(element);
                 soapScoreNum++;
                 soapScoreLabel.setString(soapScoreNum.toString());
-                
             }
         }
 
@@ -324,7 +323,7 @@ var Game = cc.Layer.extend({
         this.isMouseDown = true;
         if(isGameOver)
         return;
-        cc.AudioEngine.getInstance().playEffect("res/sfx_wing.mp3")
+        cc.AudioEngine.getInstance().playEffect(s_sfx_wing);
         birdbody.applyImpulse(cp.v(0,400), cp.v(0,0));
     },
     onTouchesMoved:function (touches, event) {
@@ -354,7 +353,7 @@ var GameOver = function()
     isGameOver =true;
     deadNum++;
 
-    cc.AudioEngine.getInstance().playEffect("res/sfx_hit.mp3");
+    cc.AudioEngine.getInstance().playEffect(s_sfx_hit);
 
     flashSprite = cc.Sprite.create(s_flash);
     flashSprite.setPosition(screenSize.width / 2, screenSize.height / 2);
@@ -434,7 +433,7 @@ var GameOver = function()
         this
     );
     //replayItem.setPosition(boardSprite.getBoundingBox().x , boardSprite.getBoundingBox().y - replayItem.getBoundingBox.height);
-    replayItem.setPosition(boardSprite.getBoundingBox().x+replayItem.getBoundingBox().width/2+20  , boardSprite.getBoundingBox().y-30);
+    replayItem.setPosition(boardSprite.getBoundingBox().x+replayItem.getBoundingBox().width/2+20  , boardSprite.getBoundingBox().y-70);
     var rankingItem = cc.MenuItemImage.create
     (
         s_ranking,
@@ -446,7 +445,7 @@ var GameOver = function()
         this
     );
     //rankingItem.setPosition(boardSprite.getBoundingBox().x+boardSprite.getBoundingBox().width/2 , boardSprite.getBoundingBox().y - replayItem.getBoundingBox.height);
-    rankingItem.setPosition(boardSprite.getBoundingBox().x+rankingItem.getBoundingBox().width*2-20 , boardSprite.getBoundingBox().y-30);
+    rankingItem.setPosition(boardSprite.getBoundingBox().x+rankingItem.getBoundingBox().width*2-20 , boardSprite.getBoundingBox().y-70);
 
     var menu = cc.Menu.create(replayItem,rankingItem);
     menu.setPosition(0,0);
@@ -455,7 +454,7 @@ var GameOver = function()
 
 var flash = function(dt)
 {
-    flashSprite.removeFromParent(true);
+    flashSprite.removeFromParent(false);
 }
 var GameScene = cc.Scene.extend({
     onEnter:function () {

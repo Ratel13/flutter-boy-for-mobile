@@ -46,7 +46,7 @@ director.setDisplayStats(false);
 
 //var director = cc.Director.getInstance();
 //cc.EGLView.getInstance()._adjustSizeToBrowser();
-cc.EGLView.getInstance().setDesignResolutionSize(320,480,cc.RESOLUTION_POLICY.SHOW_ALL);
+cc.EGLView.getInstance().setDesignResolutionSize(320,480,cc.RESOLUTION_POLICY.HEIGHT);//SHOW_ALL);
 
 // set FPS. the default value is 1.0/60 if you don't call this
 director.setAnimationInterval(1.0 / 60);

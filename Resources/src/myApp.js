@@ -16,6 +16,7 @@ var MyLayer = cc.Layer.extend({
         //////////////////////////////
         // 1. super init first
         this._super();
+        cc.AudioEngine.getInstance().playEffect(s_sfx_wing);
         var size = cc.Director.getInstance().getWinSize();
 
         var lazyLayer = cc.Layer.create();
@@ -30,13 +31,13 @@ var MyLayer = cc.Layer.extend({
 
         sys.localStorage.setItem('secondScore',0);
     */
+                              FacebookJsb.login(1);
         var startItem = cc.MenuItemImage.create
         (
             s_startBtn1,
             s_startBtn2,
             function ()
             {
-                FacebookJsb.login(1);
                 var nextScene = cc.Scene.create();
                 var nextLayer = new GameScene;
                 nextScene.addChild(nextLayer);

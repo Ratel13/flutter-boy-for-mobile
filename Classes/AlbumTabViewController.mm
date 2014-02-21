@@ -19,6 +19,7 @@ using namespace std;
 
 @synthesize adStatus;
 @synthesize adView;
+#define iPhone5_macro ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -34,14 +35,11 @@ using namespace std;
 }
 - (BOOL)initView
 {
-    adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    adView = [[ADBannerView alloc] initWithFrame:CGRectMake(0,0, 320, 50)];
     self.adView.delegate = self;
     self.adView.backgroundColor = [UIColor whiteColor];
     [[EAGLView sharedEGLView] addSubview:adView];
-    /*
-    adStatus = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 200, 30)];
-    [[EAGLView sharedEGLView] addSubview:adStatus];
-    */
+   
     return true;
 }
 
